@@ -1,0 +1,99 @@
+JEDNÁ SE VÝHRADNÌ O ŠKOLNÍ PROJEKTY/ÚKOLY
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Semestralni prace
+Chatovací program - v ncurses. Napište klient/server aplikaci. Server zaøizuje pøeposílání zpráv klientùm a poslouchá na pøipojení na jednom portu. Klient umí pøijímat a posílat zprávy na server. Server mùže najednou obsluhovat více rùzných chatù mezi rùznými klienty. Klientská aplikace mùže chat na serveru vytvoøit nebo se mùže pøipojit do již existujícího chatu. Chat zanikne po odpojení všech klientù. 
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+AG1_1
+Rodinná farma Vidlák & syn potøebuje postavit elektrický ohradník pro stádo ovcí na svém pozemku. Pozemek má tvar kruhu, na jehož obvodu roste N stromù a v jehož støedu je napajedlo. Plot vypadá tak, že se vezme nìkolik kùlù, na nìž se upevní izolátor a na nìj pak drát tak, aby drát tvoøil uzavøený okruh. Protože pan Vidlák je mimoøádnì šetøivý, žádné kùly kupovat nechce a namísto toho chce využít stromy na okraji pozemku, navíc se mu nechce použít více než tøi izolátory (a tedy bude mít ohradník nutnì tvar trojúhelníku). Dùležité je, aby uvnitø ohradníku bylo napajedlo (pokud napajedlo leží pøesnì na spojnici dvou ze tøí stromù ohradníku, chápe se jako že je uvnitø). Kolik má pan Vidlák možností, jak za tìchto podmínek plot postavit?
+
+Formát vstupu:
+- na prvním øádku je èíslo N (poèet stromù) a celé èíslo M (obvod pozemku),
+- pak následuje N øádkù, kde na i-tém øádku je èíslo udávající vzdálenost i-tého stromu od nejsevernìjšího bodu pozemku, mìøenou obloukovou vzdáleností po smìru hodinových ruèièek,
+- pokud dva stromy leží na stejném místì, chápe se to jako že stále jsou dvì možnosti kam mùže být upevnìn izolátor,
+- mùžete se spolehnout, že vstup je zadán korektnì,
+- 0 <= N <= 2^21,
+- 0 < M < 2^60.
+
+Formát výstupu:
+- na samostatném øádku èíslo s výsledkem.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+AG1_2
+Dìti ve školce si oblíbily skládání matrjošek, aniž by si uvìdomily, jakou mají matrjošky vlastnì krásnou rekurzivní definici. Prázdná posloupnost je matrjoška. Matrjoška je schránka o jisté velikosti V, sestávající z levé a pravé poloviny (obì velikosti V), která obsahuje posloupnost dalších matrjošek, souèet jejichž velikostí je nejvýše V. Velikost matrjošky je daná pouze velikostí obalu, nezávisle na tom, co všechno je uvnitø. Dìti do øady položily kousky matrjošek, levé a pravé, a od vás chtìjí poradit, jestli tato øada lze poskládat do korektní matrjošky. Složit do sebe lze pouze dílky stejné velikosti. Poøadí dílkù v této øadì však nelze mìnit. Zároveò je potøeba zjistit, které z dìtí výslednou matrjošku dostane, což bude takové, které pøispìlo nejvíce. To znamená souèet velikostí dílkù, které toto dítì celkem položilo (v pøípadì rovnosti rozhoduje lexikografické poøadí jmen dle ASCII). Výslednou složeninu toto dítì dostane i tehdy, pokud z ní nelze poskládat korektní matrjošku.
+
+Formát vstupu:
+- na prvním øádku je èíslo N udávající poèet kouskù matrjošek,
+- pak následuje N øádkù, na i-tém øádku je èíslo Mi popisující èást matrjošky, mezera, a potom jméno dítìte Ji, které tam tento díl položilo,
+- pokud je èíslo Mi záporné, je to levá èást matrjošky, pokud kladné, tak pravá,
+- absolutní hodnota Mi udává velikost daného dílku matrjošky,
+- 1 <= N <= 1000000,
+- -2^20 < Mi < 2^20, Mi neni rovno 0,
+- |Ji| < 1024 a sestává z tisknutelných znakù,
+- mùžete se spolehnout, že vstup je zadán korektnì.
+
+Formát výstupu:
+- první øádek obsahuje buïto "Ano" nebo "Ne" (bez uvozovek) podle toho, zda je øada složitelná do matrjošky èi není,
+- druhý øádek obsahuje jméno dítìte, které matrjošku dostane.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+AG1_3
+Všem jistì dobøe známá rodinná farma Vidlák & syn se po fiasku s výstavbou ohradníku pro ovce (kdy z úsporných dùvodù byl zvolen ohradník s nulovým obsahem) rozhodla rozjet jiný byznys. Na obøích pozemcích farmy se nachází rozsáhlá sí potokù, potùèkù, øek a øíèek. Pan Vidlák by na èásti této øíèní sítì chtìl vysadit pstruhy. Øíèní sí je dána pomocí N význaèných bodù na øekách a obousmìrnì propojených úsekù mezi nimi. Mezi význaèné body patøí i prameny, ústí do moøe, èi soutoky nìkolika øek. Víte, že øíèní sí tvoøí strom. To znamená, že mezi každými dvìma význaènými body vede právì jedna øíèní cesta. Pstruhy však chce pan Vidlák chovat pouze na takové podsíti øíèní sítì, která je souvislá, tedy jsou v ní propojeny každé dva body øíèní cestou. (Podsí mùže být i jednobodová.) Jak už je pánì Vidlákovým dobrým zvykem, rád by nejprve spoèítal, kolik možností, kde zaèít pstruhy chovat, vlastnì má. Protože mohou vycházet ve výsledcích dosti velká èísla, bude nám staèit, pokud místo pøesného výsledku vypíšete pouze zbytek po dìlení jistým velkým prvoèíslem. Pan Vidlák dále odmítá používat nástroje, kterým nerozumí, knihovnu STL tudíž ve svých programech nemùžete použít.
+
+Formát vstupu:
+- Na prvním øádku je èíslo N.
+- Poté následuje N øádkù, kde i-tý obsahuje èíslo s_i, udávající poèet význaèných bodù, se kterými je propojen význaèný bod èíslo i-1 (body èíslujeme od nuly), a dále na øádku následuje mezerami oddìlený seznam s_i tìchto bodù.
+- 1 <= N <= 10^6
+- Vstup je zadán korektnì
+
+Formát výstupu:
+- Jeden øádek obsahující èíslo s výsledkem modulo 536870909.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+AG1_4
+Aerolinie Vžum & Bum se rozhodly modernizovat své služby pro obsluhu N letiš, která si mùžeme pøedstavovat jako body v dvourozmìrném prostoru. Vedení firmy pøišlo s novou strategií: Každá trojice letiš, dejme tomu A,B,C, bude obsluhována dvìma letadly. První letadlo bude létat z letištì A do B, z nìj do C a z nìj opìt do A. Druhé letadlo bude létat pøesnì v opaèném smìru. Každé letištì bude navštìvováno mnoha letadly, podle toho, v kolika trojicích letištì leží.
+Cena za letenku mezi dvìma letišti bude nastavena jako druhá mocnina euklidovské vzdálenosti obou letiš.
+Záhy se experimentálnì pøišlo na to, že pro nìkteré trojice letiš lidé nevyužívají všech linek. Napøíklad pro polohy letiš A=(1,2), B=(3,1), C=(5,2), D=(2,3), E=(4,4), ve trojici ABC žádný pasažér nevyužíval letu mezi A a C a všichni létali radìji oklikou z A do B a teprve z B potom do C. Pochopitelnì - cena za pøímou letenku z A do C je 16, kdežto z A do B i z B do C stojí jen 5. Oproti tomu v trojici ABD se žádná taková oklika nevyplatí. Trojici letiš, kde je cena cesty mezi každými dvìma letišti ostøe menší než cena cesty oklikou pøes tøetí bod, nazveme dobrou trojicí. Aerolinie pochopitelnì chtìjí linky provozovat pouze na dobrých trojicích letiš, protože jen na nich se vyplatí používat skuteènì všechny spoje. Napište program, který zjistí poèet dobrých trojic letiš!
+
+Formát vstupu:
+- na prvním øádku je èíslo N (3 <= N <= 2000)
+- pak následuje N øádek, kde na i-tém jsou 2 celá èísla x_i a y_i (0 <= x_i, y_i <= 10000) udávající kartézské souøadnice i-tého letištì
+- mùžete pøedpokládat, že žádná tøi letištì neleží na pøímce
+- vstup je zadaný korektnì
+
+Formát výstupu:
+- jedna øádka obsahující poèet dobrých trojic letiš
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+pruchod_grafu_1 (min kostra grafu)
+Finanèní situace Èistých drah (dále jen ÈD) donutila pøemýšlet spoleènost o optimalizaci poskytování dopravy. Potøebují seriózní studii o tom, které tratì by se daly zrušit, protože nejsou výdìleèné a jejich údržba se nevyplácí. Zároveò si ale nesmí dovolit zrušit dopravní obslužnost mezi mìsty, která doposud spojená byla, protože by se starostové pøíliš hluènì ozývali. Úkolem pro Vás je zjistit, které tratì mezi mìsty se dají zrušit tak, aby zùstala zachována dopravní obslužnost mezi všemi mìsty, v kterých Èisté dráhy poskytují dopravu. Zároveò chtìjí ale tuto dosažitelnost udržovat s co nejnižšími náklady. Vyèíslení nákladù za rok v mil. korun na danou tra máte od ÈD samozøejmì k dispozici. Navrhnìte øešení a vyèíslete náklady na roèní údržbu celé optimalizované sítì. Když bylo pøedstavenstvem ÈD vše projednáno a schváleno, všiml si jeden mladší èlen dozorèí rady poznámky v projektech financovaných fondem rozvoje EU, že na novì rekonstruovaných tratích, na které byla dotace èerpána, garantují ÈD provoz pro dalších 20 let. Tyto tratì tedy nesmíte v žádném pøípadì zrušit! Údaje poskytnuté ÈD vypadají následovnì: Máte N mìst èíslovaných od nuly a M dvojic mìst, mezi kterými vede obousmìrná tra. Mìsta v této síti jsou navzájem propojená tak, že se dostanete z libovolného mìsta do jiného. Tuto vlastnost rozhodnì chtìjí ÈD zachovat. Pøedpokládejte dále, že N i M jsou øádovì 10^4.
+
+Vstup:
+- N M
+- seznam dotovaných tratí jako seznam dvojic mìst I J mezi kterými vede tra, mìsta jsou oddìlena mezerou, jednotlivé dvojice èárkou. Vše na jednom øádku.
+- seznam tratí jako seznam trojic I J C, na každém øádku jedna trojice kde I a J jsou mìsta, a C je celoèíselný náklad na provoz. Pro jednoznaènost pøedpokládejme, že všechna C jsou navzájem rùzná.
+
+Výstup:
+- S (souèet nákladù na všechny tratì v optimalizované síti)
+- Výsledná sí reprezentovaná jako seznam následníkù. Na každém øádku èíslo mìsta a vzestupnì setøídìný seznam sousedních mìst. Øádky musí být setøídìny vzestupnì podle èísla mìsta.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+pruchod_grafu_2 (silné komponenty grafu)
+Vìc: Sledování èinnosti ženského spolku FIT (Female Information Transfer). V nìkolika mìstech (s nìkolika desítkami tisíc obyvatel) byla s úspìchem rozjeta èinnost tajné ženské organizace, zabývající se šíøením zpráv o dìní ve mìstì. Komunikaèní sí v rámci jednoho mìsta je propojena tak dùmyslnì, že a zprávu odešle KTERÁKOLIV žena v daném mìstì, za chvíli ji postupným pøedáváním zpráv obdrží všechny ženy v tomto mìstì. Zároveò ale ženy nevìdí, od koho zprávu dostávají, protože každá žena zná pouze kontakty, kam má zprávu rozeslat. Spolek a systém komunikace v nìm byl nastaven dobøe, ale zjistili jsme v poslední dobì, že prosakují informace do sousedních mìst, což chceme zamezit. Potøebujeme tedy odhalit dvojité agentky, které se infiltrovaly do spolku v jednom mìstì, ale odesílají zprávy i do jiných mìst. Takové agentky je nutné vèas odhalit. Pøikládáme seznam èlenek, které jsou spolu ve spojení. Èlenky jsou oznaèeny kódovými èísly 0, 1, ..., N - 1. Seznam má následující formát:
+
+Vstup:
+- N
+- Cislo1 mezera Cislo2
+- kde Cislo1 znaèí ženu, která má kontakt na ženu Cislo2 a té mùže odeslat zprávu. Nepodaøilo se nám však bohužel vèas roztøídit údaje od zpravodajù, a tak se nám smíchaly seznamy z jednotlivých mìst. Nevíme tedy, která žena patøí do kterého mìsta.
+
+Výstup:
+- Výstupem by mìl být vzestupnì setøídìný seznam tìch èlenek, které informují ženy z jiného než ze svého mìsta. Oèekáváme na každém øádku jedno èíslo èlenky.
